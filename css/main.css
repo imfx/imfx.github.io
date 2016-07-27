@@ -1,0 +1,124 @@
+
+body {
+	font-family: "Lora", Georgia, serif;
+	letter-spacing: -1px;
+}
+
+
+header {
+	background-color: #f7f7f7;
+	width: 100%;
+	padding: 50px 10px 60px 10px;
+	height: 100vh;
+	overflow: hidden;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}
+
+.header-info {
+	margin-top: 15%;
+}
+
+.lead {
+	color: #333333;
+	font-size: 2.2em;
+}
+	.lead strong {
+		color: #9A9A9A;
+		font-style: normal;
+		font-weight: normal;
+	}
+
+.btn:focus {
+	outline: 0px auto -webkit-focus-ring-color;
+	outline: none;
+}
+
+.btn {
+	text-transform: uppercase;
+	border-radius: 4px;
+	border: none;
+}
+
+.btn-lg {
+	font-size: 13px;
+	line-height: 1.33;
+	padding: 22px 30px;
+	font-weight: 400;
+	letter-spacing: 1px;
+}
+
+.btn-sm {
+	font-size: 11px;
+	line-height: 1.33;
+	padding: 10px 18px;
+	font-weight: 400;
+}
+
+.btn-wide {
+	width: 100%;
+	font-size: 13px;
+	line-height: 1.33;
+	padding: 18px 28px;
+	font-weight: 400;
+	letter-spacing: 1px;
+}
+
+.btn-primary {
+	background-color: #2a2a2a;
+	color: #ffffff;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
+	background-color: #000000;
+	color: #ffffff;
+	-webkit-transition: all 0.35s ease-in-out;
+	-moz-transition: all 0.35s ease-in-out;
+	-o-transition: all 0.35s ease-in-out;
+	transition: all 0.35s ease-in-out;
+}
+
+.btn-secondary {
+	background-color: #fefefe;
+	color: #231f20;
+}
+
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.active {
+  background-color: #ffffff;
+  color: #231f20;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  -o-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+
+@media (max-width: 480px) { 
+
+	.btn-lg {
+		font-size: 12.5px;
+		line-height: 1.33;
+		padding: 16px 13px;
+		letter-spacing: 0px;
+	}
+
+
+	.btn-wide {
+		width: 100%;
+		font-size: 12.5px;
+		line-height: 1.33;
+		padding: 16px 13px;
+		letter-spacing: 0px;
+	}
+
+	.header-info {
+		margin-top: 48%;
+	}
+
+	.lead {
+		color: #333333;
+		font-size: 1.7em;
+	}
+
+}
