@@ -94,6 +94,11 @@ header {
   transition: all 0.35s ease-in-out;
 }
 
+.btn-primary:active:focus {
+	background-color: #000000;
+	border-color: none;
+}
+
 @media (max-width: 480px) { 
 
 	.btn-lg {
