@@ -6,10 +6,10 @@ highlighter: rouge
 logo: false
 paginate: 15
 baseurl: '/'
-domain_name: 'http://felixaya.la'
+domain_name: 'http://blog.felixaya.la'
 google_analytics: 'UA-XXXXXXXX-X'
 plugins: [jekyll-paginate]
 
 # Details for the RSS feed generator
-url:            'http://felixaya.la'
+url:            'http://blog.felixaya.la'
 author:         'Felix Ayala'
