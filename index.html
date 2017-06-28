@@ -1,74 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Felix Ayala | Product Designer</title>
-	<meta name="keywords" content="">
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+---
+layout: default
+title: Home
+cover: false
+about: 'about.html'
+---
 
-	<meta property="og:title" content="Felix Ayala | Product Designer">
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="http://felixaya.la">
-	<meta property="og:site_name" content="Felix Ayala | Product Designer">
-	<meta property="og:description" content="Hi! I’m Felix Ayala, a full stack developer and product designer raised in Asunción, Paraguay" >
+<header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
+    <nav class="main-nav overlay clearfix">
+            {% if page.logo %}
+                <a class="blog-logo" href="{{ site.baseurl }}">
+                    <img src="{{ page.logo }}" alt="Blog Logo" />
+                </a>
+            {% endif %}
+        <a class="subscribe-button icon-feed" href="{{ site.baseurl }}feed.xml">Subscribe</a>
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">{{ site.name }}</h1>
+            <h2 class="page-description">
+                {% if site.description %} {{ site.description }}. {% endif %}
+                {% if page.about %} <a href='{{ site.baseurl }}{{ page.about }}'> About me </a> {% endif %}
+            </h2>
+        </div>
+    </div>
+    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+</header>
 
-	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/style.min.css">
 
-	<script src="js/modernizr-3.3.1.min.js"></script>
+<main id="content" class="content" role="main">
 
-</head>
 
-<body>
-        
-	<header>
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<a href="index.html">
-						<img src="img/logo.svg" alt="F—A" />
-					</a>
-				</div>
-				<!-- END col -->
-			</div>
-			<!-- END row -->
+    <div class="extra-pagination inner">
+        {% include pagination.html %}
+    </div>
 
-			<div class="row header-info">
-				<div class="header-wrapper">
-					<div class="col-sm-8 col-sm-offset-2 text-center">
-						<p class="lead">Hi! I’m Felix Ayala, a <strong>full stack developer</strong> and <strong>product designer</strong> raised in Asunción, Paraguay.</p>
-					</div>
-					<!-- END col -->
+    {% for post in paginator.posts %}
 
-					<div class="clearfix"></div>
+    <article class="post">
+        <header class="post-header">
+            <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        </header>
+        <section class="post-excerpt">
+            {{ post.excerpt }} <a class="read-more" href="{{ post.url }}">&raquo;</a>
+        </section>
+        <footer class="post-meta">
+            {% if site.author %}
+                <img class="author-thumb" src="/assets/images/profile.png" alt="Author's profile picture" nopin="nopin" />
+                {{ site.author }}
+            {% endif %}
+            {% if post.categories.size > 0 %} 
+                {{ post.categories | array_to_sentence_string | prepend: 'on ' }} 
+            {% endif %}
+            <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
+                {{ post.date | date_to_string }}
+            </time> 
+        </footer>
+    </article>
 
-					<div class="col-xs-6 text-right">
-						<a href="https://dribbble.com/rockbarato" class="btn btn-secondary btn-lg">See my Work</a>
-					</div>
-					<!-- END col -->
+    <!-- Capser below -->
+<!--     <article class="{{post_class}}">
+    <header class="post-header">
+        <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>{{excerpt words="26"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="Author image" nopin="nopin" />{{/if}}
+        {{author}}
+        {{tags prefix=" on "}}
+        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+    </footer>
+    </article> -->
+    <!--  -->
 
-					<div class="col-xs-6 text-left">
-						<a href="mailto:hi@felixaya.la" class="btn btn-primary btn-lg">Contact Me</a>
-					</div>
-					<!-- END col -->
-				</div>
-				<!-- END row -->
-			</div>
-			<!-- END info -->
-		</div>
-		<!-- END wrapper -->
-	</header>
-	<!-- END header -->
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    {% endfor %}
 
-		ga('create', 'UA-47269845-10', 'auto');
-		ga('send', 'pageview');
-	</script>
-</body>
-</html>
+    {% include pagination.html %}
+
+</main>
