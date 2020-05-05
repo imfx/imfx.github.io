@@ -1,0 +1,15 @@
+name: "dev"
+description: "Blogging about code"
+meta_description: "Your New Jekyll Site, Blogging about stuffs"
+markdown: kramdown
+highlighter: rouge
+logo: false
+paginate: 15
+baseurl: '/'
+domain_name: 'http://blog.felixaya.la'
+google_analytics: 'UA-XXXXXXXX-X'
+plugins: [jekyll-paginate]
+
+# Details for the RSS feed generator
+url:            'http://blog.felixaya.la'
+author:         'Felix Ayala'

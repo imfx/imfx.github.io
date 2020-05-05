@@ -1,0 +1,3 @@
+[submodule "landing-menu"]
+	path = landing-menu
+	url = https://github.com/zrkb/landing-menu
